@@ -12,7 +12,7 @@ pairs = [
         ["I'm doing well, thank you for asking.", "I'm great! How about you?"]
     ],
     [
-        r"what is your name ?",
+        r"(.*)name(.*)|what is your name ?",
         ["You can call me ChatBot.", "I'm ChatBot, nice to meet you!"]
     ],
     [
@@ -56,13 +56,23 @@ pairs = [
 ]
 
 
-# Create and train the chatbot
 def ai_virtual_assistant():
+    """
+    AI Virtual Assistant function.
+
+    This function initializes an AI-powered virtual assistant and starts a conversation with the user.
+
+    Parameters:
+        None
+
+    Returns:
+        None
+    """
     print("Hi! I'm your AI-powered virtual assistant. How can I assist you today?")
     chatbot = Chat(pairs, reflections)
     chatbot.converse()
 
-# Main function to run the virtual assistant
+
 if __name__ == "__main__":
     nltk.download('punkt')  # Download NLTK data if not already downloaded
     ai_virtual_assistant()
